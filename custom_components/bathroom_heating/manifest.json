@@ -1,0 +1,14 @@
+{
+  "domain": "bathroom_heating",
+  "name": "Fürdőszoba fűtés (Bathroom Heating)",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["http", "frontend"],
+  "after_dependencies": ["opentherm_gw"],
+  "documentation": "https://github.com/YOUR_GITHUB/bathroom_heating",
+  "integration_type": "device",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/YOUR_GITHUB/bathroom_heating/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

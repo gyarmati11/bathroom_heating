@@ -1,0 +1,113 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Bathroom – basics",
+        "description": "Select the bathroom temperature and humidity sensors, the floor heating pump relay and the towel radiator smart plug.",
+        "data": {
+          "name": "Name",
+          "temp_sensor": "Temperature sensor",
+          "humidity_sensor": "Humidity sensor",
+          "pump_switch": "Floor heating pump relay",
+          "towel_switch": "Towel radiator plug"
+        }
+      },
+      "boiler": {
+        "title": "Boiler (OpenTherm)",
+        "description": "Heat is requested from the boiler only when the house heating is NOT running. If the house heats, only the pump is switched. The boiler heats the floor until the return water reaches the set temperature.",
+        "data": {
+          "house_heating_entity": "House heating running? (OTGW thermostat / binary sensor)",
+          "boiler_method": "How to request heat",
+          "gateway_id": "OTGW gateway_id",
+          "boiler_entity": "Boiler entity (number or switch mode)",
+          "return_temp_sensor": "Return water temperature sensor"
+        },
+        "data_description": {
+          "house_heating_entity": "OTGW climate entity recommended.",
+          "gateway_id": "The id given when setting up OpenTherm Gateway.",
+          "return_temp_sensor": "OTGW 'Return Water Temperature' sensor (disabled by default)."
+        }
+      },
+      "extra": {
+        "title": "Extras (optional)",
+        "description": "Works without these, but they save energy.",
+        "data": {
+          "battery_sensor": "Home battery state of charge (%)",
+          "towel_power_sensor": "Towel radiator power (W)",
+          "towel_energy_sensor": "Towel radiator energy (kWh)",
+          "towel_nominal_watts": "Towel radiator nominal power (if not metered)",
+          "window_sensor": "Window contact",
+          "outdoor_temp_sensor": "Outdoor temperature",
+          "outdoor_humidity_sensor": "Outdoor humidity",
+          "notify_services": "Send notifications to"
+        },
+        "data_description": {
+          "towel_energy_sensor": "Preferred if available.",
+          "outdoor_humidity_sensor": "Ventilation is only suggested when outside air is drier.",
+          "notify_services": "E.g. notify.mobile_app_phone. Empty = persistent notification."
+        }
+      }
+    },
+    "error": {
+      "gateway_required": "Enter the OTGW gateway_id.",
+      "entity_required": "Select a boiler entity for this mode."
+    },
+    "abort": {
+      "already_configured": "This towel radiator is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Bathroom – basics",
+        "description": "Select the bathroom temperature and humidity sensors, the floor heating pump relay and the towel radiator smart plug.",
+        "data": {
+          "name": "Name",
+          "temp_sensor": "Temperature sensor",
+          "humidity_sensor": "Humidity sensor",
+          "pump_switch": "Floor heating pump relay",
+          "towel_switch": "Towel radiator plug"
+        }
+      },
+      "boiler": {
+        "title": "Boiler (OpenTherm)",
+        "description": "Heat is requested from the boiler only when the house heating is NOT running. If the house heats, only the pump is switched. The boiler heats the floor until the return water reaches the set temperature.",
+        "data": {
+          "house_heating_entity": "House heating running? (OTGW thermostat / binary sensor)",
+          "boiler_method": "How to request heat",
+          "gateway_id": "OTGW gateway_id",
+          "boiler_entity": "Boiler entity (number or switch mode)",
+          "return_temp_sensor": "Return water temperature sensor"
+        },
+        "data_description": {
+          "house_heating_entity": "OTGW climate entity recommended.",
+          "gateway_id": "The id given when setting up OpenTherm Gateway.",
+          "return_temp_sensor": "OTGW 'Return Water Temperature' sensor (disabled by default)."
+        }
+      },
+      "extra": {
+        "title": "Extras (optional)",
+        "description": "Works without these, but they save energy.",
+        "data": {
+          "battery_sensor": "Home battery state of charge (%)",
+          "towel_power_sensor": "Towel radiator power (W)",
+          "towel_energy_sensor": "Towel radiator energy (kWh)",
+          "towel_nominal_watts": "Towel radiator nominal power (if not metered)",
+          "window_sensor": "Window contact",
+          "outdoor_temp_sensor": "Outdoor temperature",
+          "outdoor_humidity_sensor": "Outdoor humidity",
+          "notify_services": "Send notifications to"
+        },
+        "data_description": {
+          "towel_energy_sensor": "Preferred if available.",
+          "outdoor_humidity_sensor": "Ventilation is only suggested when outside air is drier.",
+          "notify_services": "E.g. notify.mobile_app_phone. Empty = persistent notification."
+        }
+      }
+    },
+    "error": {
+      "gateway_required": "Enter the OTGW gateway_id.",
+      "entity_required": "Select a boiler entity for this mode."
+    }
+  }
+}

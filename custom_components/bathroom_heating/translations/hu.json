@@ -1,0 +1,113 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Fürdőszoba – alapok",
+        "description": "Válaszd ki a fürdő hőmérő és páratartalom szenzorát, a padlófűtés keringető szivattyú reléjét és a törölközőszárító okos dugaszát.",
+        "data": {
+          "name": "Név",
+          "temp_sensor": "Hőmérséklet szenzor",
+          "humidity_sensor": "Páratartalom szenzor",
+          "pump_switch": "Padlófűtés szivattyú relé",
+          "towel_switch": "Törölközőszárító dugalj"
+        }
+      },
+      "boiler": {
+        "title": "Kazán (OpenTherm)",
+        "description": "A vezérlés csak akkor kér hőt a kazántól, ha a ház fűtése éppen NEM megy. Ha a ház fűt, csak a szivattyút kapcsolja. A kazán addig fűt a padlóra, amíg a visszatérő víz el nem éri a beállított hőfokot.",
+        "data": {
+          "house_heating_entity": "Ház fűtése megy? (OTGW termosztát / bináris szenzor)",
+          "boiler_method": "Hogyan kérjen hőt a kazántól",
+          "gateway_id": "OTGW gateway_id (pl. otgw)",
+          "boiler_entity": "Kazán entitás (szám vagy kapcsoló módhoz)",
+          "return_temp_sensor": "Visszatérő víz hőmérséklet szenzor"
+        },
+        "data_description": {
+          "house_heating_entity": "OTGW climate entitás javasolt: akkor számít 'fűt'-nek, ha a termosztát hőt kér.",
+          "gateway_id": "Az OpenTherm Gateway integráció beállításánál megadott azonosító.",
+          "return_temp_sensor": "OTGW: 'Return Water Temperature' szenzor (alapból le van tiltva, engedélyezd)."
+        }
+      },
+      "extra": {
+        "title": "Kiegészítők (opcionális)",
+        "description": "Ezek nélkül is működik, de így takarékosabb és pontosabb.",
+        "data": {
+          "battery_sensor": "Napelemes akku töltöttség (%)",
+          "towel_power_sensor": "Törölközőszárító teljesítmény (W)",
+          "towel_energy_sensor": "Törölközőszárító energia (kWh, ha a dugalj méri)",
+          "towel_nominal_watts": "Törölközőszárító névleges teljesítmény (ha nincs mérés)",
+          "window_sensor": "Ablak nyitásérzékelő",
+          "outdoor_temp_sensor": "Kültéri hőmérséklet",
+          "outdoor_humidity_sensor": "Kültéri páratartalom",
+          "notify_services": "Értesítés küldése ide"
+        },
+        "data_description": {
+          "towel_energy_sensor": "Ha megvan, ezt használja (legpontosabb). Különben a W szenzort, végül a névleges teljesítményt.",
+          "outdoor_humidity_sensor": "Ha megadod, csak akkor kér szellőztetést, ha kint szárazabb a levegő.",
+          "notify_services": "Pl. notify.mobile_app_telefon. Ha üres, Home Assistant értesítést kapsz."
+        }
+      }
+    },
+    "error": {
+      "gateway_required": "OTGW módhoz add meg a gateway_id-t.",
+      "entity_required": "Ehhez a módhoz válassz kazán entitást."
+    },
+    "abort": {
+      "already_configured": "Ez a törölközőszárító már be van állítva."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Fürdőszoba – alapok",
+        "description": "Válaszd ki a fürdő hőmérő és páratartalom szenzorát, a padlófűtés keringető szivattyú reléjét és a törölközőszárító okos dugaszát.",
+        "data": {
+          "name": "Név",
+          "temp_sensor": "Hőmérséklet szenzor",
+          "humidity_sensor": "Páratartalom szenzor",
+          "pump_switch": "Padlófűtés szivattyú relé",
+          "towel_switch": "Törölközőszárító dugalj"
+        }
+      },
+      "boiler": {
+        "title": "Kazán (OpenTherm)",
+        "description": "A vezérlés csak akkor kér hőt a kazántól, ha a ház fűtése éppen NEM megy. Ha a ház fűt, csak a szivattyút kapcsolja. A kazán addig fűt a padlóra, amíg a visszatérő víz el nem éri a beállított hőfokot.",
+        "data": {
+          "house_heating_entity": "Ház fűtése megy? (OTGW termosztát / bináris szenzor)",
+          "boiler_method": "Hogyan kérjen hőt a kazántól",
+          "gateway_id": "OTGW gateway_id (pl. otgw)",
+          "boiler_entity": "Kazán entitás (szám vagy kapcsoló módhoz)",
+          "return_temp_sensor": "Visszatérő víz hőmérséklet szenzor"
+        },
+        "data_description": {
+          "house_heating_entity": "OTGW climate entitás javasolt: akkor számít 'fűt'-nek, ha a termosztát hőt kér.",
+          "gateway_id": "Az OpenTherm Gateway integráció beállításánál megadott azonosító.",
+          "return_temp_sensor": "OTGW: 'Return Water Temperature' szenzor (alapból le van tiltva, engedélyezd)."
+        }
+      },
+      "extra": {
+        "title": "Kiegészítők (opcionális)",
+        "description": "Ezek nélkül is működik, de így takarékosabb és pontosabb.",
+        "data": {
+          "battery_sensor": "Napelemes akku töltöttség (%)",
+          "towel_power_sensor": "Törölközőszárító teljesítmény (W)",
+          "towel_energy_sensor": "Törölközőszárító energia (kWh, ha a dugalj méri)",
+          "towel_nominal_watts": "Törölközőszárító névleges teljesítmény (ha nincs mérés)",
+          "window_sensor": "Ablak nyitásérzékelő",
+          "outdoor_temp_sensor": "Kültéri hőmérséklet",
+          "outdoor_humidity_sensor": "Kültéri páratartalom",
+          "notify_services": "Értesítés küldése ide"
+        },
+        "data_description": {
+          "towel_energy_sensor": "Ha megvan, ezt használja (legpontosabb). Különben a W szenzort, végül a névleges teljesítményt.",
+          "outdoor_humidity_sensor": "Ha megadod, csak akkor kér szellőztetést, ha kint szárazabb a levegő.",
+          "notify_services": "Pl. notify.mobile_app_telefon. Ha üres, Home Assistant értesítést kapsz."
+        }
+      }
+    },
+    "error": {
+      "gateway_required": "OTGW módhoz add meg a gateway_id-t.",
+      "entity_required": "Ehhez a módhoz válassz kazán entitást."
+    }
+  }
+}
